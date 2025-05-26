@@ -16,6 +16,7 @@ test.describe('APIMatic API Automation', () => {
 
   test('POST zip file and poll for binary status response', async () => {
     // 1. POST request with form-data using Playwright's multipart option
+      test.setTimeout(120_000);
     const postResponse = await apiContext.post(BASE_URL, {
       headers: AUTH_HEADER,
       multipart: {
