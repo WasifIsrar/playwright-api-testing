@@ -22,6 +22,7 @@ test.describe('APIMatic API Automation', () => {
         file: fs.createReadStream(ZIP_PATH)
       }
     });
+    console.log('POST Response:', await postResponse.json());
     expect(postResponse.ok()).toBeTruthy();
     const postData = await postResponse.json();
     const id = postData.id;
